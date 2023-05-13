@@ -1,10 +1,14 @@
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import RoutesApp from './routes/index.jsx';
+import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <>
-      <h1>Quiz App</h1>
-    </>
+    <BrowserRouter>
+      <GlobalStyle />
+      <RoutesApp />
+    </BrowserRouter>
   );
 }
 
