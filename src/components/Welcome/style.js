@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const ButtonInitial = styled.button`
+export const ButtonInitial = styled.button.attrs({ type: 'button' })`
   cursor: pointer;
   font-weight: bold;
   padding: 0.8rem 1.5rem;
