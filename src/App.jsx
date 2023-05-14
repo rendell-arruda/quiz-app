@@ -1,16 +1,20 @@
-import { BrowserRouter } from 'react-router-dom';
-import RoutesApp from './routes/index.jsx';
+import { useContext } from 'react';
 import GlobalStyle from './styles/global';
-import { QuizProvider } from './context/quiz';
+
+import { QuizContext } from './context/quiz';
+
+import Welcome from './components/Welcome/index.jsx';
+import Question from './components/Question/index.jsx';
 
 function App() {
+  const [quizState, dispatch] = useContext(QuizContext);
+
   return (
-    <BrowserRouter>
-      <QuizProvider>
-        <GlobalStyle />
-        <RoutesApp />
-      </QuizProvider>
-    </BrowserRouter>
+    <>
+      <GlobalStyle />
+      {quizState.gameStage === 'Start' && <Welcome />}
+      {quizState.gameStage === 'Playing' && <Question />}
+    </>
   );
 }
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const ButtonInitial = styled.button.attrs({ type: 'button' })`
   cursor: pointer;

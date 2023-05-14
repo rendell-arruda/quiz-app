@@ -4,7 +4,7 @@ import { ButtonInitial, WelcomeContainer } from './style';
 import { QuizContext } from '../../context/quiz';
 
 export default function Welcome() {
-  const [state, dispatch] = useContext(QuizContext);
+  const [quizState, dispatch] = useContext(QuizContext);
   return (
     <WelcomeContainer>
       <h1>Quiz de Programação</h1>
