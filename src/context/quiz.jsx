@@ -7,11 +7,11 @@ const initialState = {
   gameStage: STAGES[0],
   questions,
   currentQuestion: 0,
-  score: 0
+  score: 0,
+  answerSelected: false
 };
 
 const quizReducer = (state, action) => {
-  console.log(state, action);
   switch (action.type) {
     case 'CHANGE_STAGE':
       return { ...state, gameStage: STAGES[1] };
@@ -41,6 +41,23 @@ const quizReducer = (state, action) => {
     case 'NEW_GAME':
       return initialState;
 
+    case 'CHECK-ANSWER':
+      if (state.answerSelected) return state;
+      console.log(action);
+
+      const answer = action.payload.answer;
+      const option = action.payload.option;
+      let correctAnswer = 0;
+
+      if (answer === option) {
+        correctAnswer = 1;
+      }
+
+      return {
+        ...state,
+        score: state.score + correctAnswer,
+        answerSelected: option
+      };
     default:
       return state;
   }
