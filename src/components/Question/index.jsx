@@ -1,7 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
-
 import { QuizContext } from '../../context/quiz';
+import './style.js';
+import { Btn, DesafioContainer } from './style.js';
 
 const Question = () => {
   const [quizState, dispatch] = useContext(QuizContext);
@@ -9,7 +10,7 @@ const Question = () => {
 
   const currentQuestion = quizState.questions[quizState.currentQuestion];
   return (
-    <div id="question">
+    <DesafioContainer id="question">
       <h1>Quiz de Programação</h1>
       <p>
         Pergunta de {quizState.currentQuestion + 1} de{' '}
@@ -19,8 +20,8 @@ const Question = () => {
       <div id="options-container">
         <p>Opções</p>
       </div>
-      <button>Continuar</button>
-    </div>
+      <Btn onClick={() => dispatch({ type: 'CHANGE_QUESTION' })}>Continuar</Btn>
+    </DesafioContainer>
   );
 };
 

@@ -19,10 +19,16 @@ const quizReducer = (state, action) => {
       const reorderedQuestions = questions.sort(() => {
         return Math.random() - 0.5;
       });
-
       return {
         ...state,
         questions: reorderedQuestions
+      };
+
+    case 'CHANGE_QUESTION':
+      const nextQuestion = state.currentQuestion + 1;
+      return {
+        ...state,
+        currentQuestion: nextQuestion
       };
 
     default:
