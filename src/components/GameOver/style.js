@@ -13,7 +13,7 @@ export const GameOverContainer = styled.div`
   }
   p {
     margin-bottom: 1rem;
-    color: #8435de;
+    /* color: #8435de; */
   }
 
   img {

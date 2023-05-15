@@ -10,11 +10,13 @@ export const GameOver = () => {
   return (
     <GameOverContainer>
       <h2>Fim de Jogo</h2>
-      <p>Pontuação:x</p>
-      <p>Voce acertou y de z perguntas</p>
+      <p>Pontuação: {quizState.score}</p>
+      <p>
+        Voce acertou {quizState.score} de {quizState.questions.length} perguntas
+      </p>
       <img src={WellDone} alt="Fim do Quiz" />
 
-      <Btn>Reiniciar</Btn>
+      <Btn onClick={() => dispatch({ type: 'NEW_GAME' })}>Reiniciar</Btn>
     </GameOverContainer>
   );
 };
