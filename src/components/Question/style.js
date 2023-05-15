@@ -24,7 +24,7 @@ export const Btn = styled.button.attrs({ type: 'button' })`
 
 export const DesafioContainer = styled.div`
   text-align: center;
-  max-width: 500px;
+  max-width: 700px;
   background: #8435de;
   border-radius: 4px;
   padding: 2rem;

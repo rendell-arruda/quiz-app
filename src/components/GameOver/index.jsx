@@ -11,9 +11,9 @@ export const GameOver = () => {
     <GameOverContainer>
       <h2>Fim de Jogo</h2>
       <p>Pontuação: {quizState.score}</p>
-      <p>
+      <h3>
         Voce acertou {quizState.score} de {quizState.questions.length} perguntas
-      </p>
+      </h3>
       <img src={WellDone} alt="Fim do Quiz" />
 
       <Btn onClick={() => dispatch({ type: 'NEW_GAME' })}>Reiniciar</Btn>

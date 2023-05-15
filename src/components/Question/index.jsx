@@ -20,7 +20,7 @@ const Question = () => {
 
   return (
     <DesafioContainer id="question">
-      <h1>Quiz de Programação</h1>
+      <h1>Quiz de Química</h1>
       <p>
         Pergunta de {quizState.currentQuestion + 1} de{' '}
         {quizState.questions.length}
